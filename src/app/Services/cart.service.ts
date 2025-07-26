@@ -13,11 +13,17 @@ private cartItems: any[] = [];
 
   constructor() {}
 
-  addToCart(product: any) {
-    this.cartItems.push(product);
-    this.cartSubject.next(this.cartItems); // Update subscribers
+ddToCart(product: any) {
+  const existingItem = this.cartItems.find(p => p.id === product.id);
+
+  if (existingItem) {
+    existingItem.quantity += 1; 
+  } else {
+    this.cartItems.push({ ...product, quantity: 1 }); 
   }
 
+  this.cartSubject.next(this.cartItems);
+}
   getCartItems() {
     return this.cartItems;
   }
