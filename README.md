@@ -1,59 +1,21 @@
-# RouteTask
+📝 Project Overview
+Product Gallery is a dynamic Angular application that displays a list of products using clean UI design. The app showcases Angular best practices like custom pipes, HTTP interceptors, and component-based architecture. Users can browse through items, view details.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+🎥 Demo
+🔗 Live Demo: https://route-task-ten-indol.vercel.app/#/home
 
-## Development server
+🛠️ Tech Stack Used
+Angular	Framework for building SPA
+Tailwind CSS	Utility-first CSS framework
+RxJS	Handling asynchronous data
+TypeScript Typed JavaScript
+Custom Pipes Data formatting (e.g., filtering, price formatting)
+HTTP Interceptors	For handling loading spinners
 
-To start a local development server, run:
+🚀 Features
+✅ Product listing and UI cards
+✅ Custom pipes for filtering and formatting
+✅ HTTP Interceptor for global request handling
+✅ Responsive design using Tailwind CSS
+✅ Organized and reusable component structure
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
