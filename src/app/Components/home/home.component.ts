@@ -3,6 +3,7 @@ import { Component, Pipe } from '@angular/core';
 import { ProductService } from '../../Services/product.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
 
   products: any = []
-  constructor(private allproducts: ProductService){}
+  constructor(private allproducts: ProductService, private cartService:CartService){}
 
   getProducts(){
     this.allproducts.getAllProducts().subscribe({
@@ -26,4 +27,8 @@ export class HomeComponent {
   ngOnInit():void{
     this.getProducts()
   }
+  
+addProductToCart(product: any) {
+  this.cartService.addToCart(product);
+}
 }
