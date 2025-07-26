@@ -18,8 +18,5 @@ ngOnInit(): void {
     this.cartCount = items.length;
   });
 }
-toggleDarkMode() {
-  const htmlEl = document.documentElement;
-  htmlEl.classList.toggle('dark');
-}
+
 }

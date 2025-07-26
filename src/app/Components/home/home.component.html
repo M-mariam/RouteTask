@@ -1,5 +1,18 @@
+
+<input type="text" [(ngModel)]="searchTerm" class="border border-gray-300">
+<div class="flex justify-end mb-4">
+<select
+  [(ngModel)]="sortingOpts"
+  class="border border-gray-300 dark:bg-gray-700 dark:text-white px-3 py-2 rounded-md">
+  <option value="">Sort By</option>
+  <option value="name">Name (A-Z)</option>
+  <option value="low">Price: Low to High</option>
+  <option value="high">Price: High to Low</option>
+</select>
+</div>
 <div class="  p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
-  <div *ngFor="let product of products; let i = index" class="bg-white cursor-pointer rounded-xl shadow-md p-4 hover:shadow-lg transition duration-300">
+ @for (product of products | search:searchTerm | sort:sortingOpts; track product.id){
+  <div class="bg-white cursor-pointer rounded-xl shadow-md p-4 hover:shadow-lg transition duration-300">
    <div [routerLink]="['/products', product.id]">
     <img [src]="product.image" alt="Product Image" class="w-full h-48 object-contain mb-4" />
 
@@ -17,4 +30,8 @@
   Add to Cart
 </button>
   </div>
+}
+@empty {
+    <div> No products Founds</div>
+}
 </div>

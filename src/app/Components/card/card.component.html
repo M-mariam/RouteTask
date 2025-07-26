@@ -2,16 +2,25 @@
   <h2 class="text-2xl font-bold mb-6 text-gray-800 dark:text-white">🛒 Your Cart</h2>
 
   <div *ngIf="cartItems.length === 0" class="text-center text-gray-500 dark:text-gray-300">
-    Your cart is empty 
+    Your cart is empty 😔
   </div>
 
   <div *ngIf="cartItems.length > 0" class="space-y-4">
     <div *ngFor="let item of cartItems; let i = index" class="flex items-center justify-between border-b pb-4">
       <div class="flex items-center gap-4">
         <img [src]="item.image" alt="" class="w-20 h-20 object-contain" />
+
         <div>
           <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{{ item.title }}</h3>
-          <p class="text-sm text-gray-600 dark:text-gray-300">Price: {{ item.price | currency }}</p>
+          <p class="text-sm text-gray-600 dark:text-gray-300">Unit Price: {{ item.price | currency }}</p>
+
+          <div class="flex items-center gap-2 mt-2">
+            <button (click)="decreaseQuantity(i)" class="bg-gray-300 dark:bg-gray-600 text-white px-2 rounded">−</button>
+            <span class="text-md font-semibold dark:text-white">{{ item.quantity }}</span>
+            <button (click)="increaseQuantity(i)" class="bg-blue-500 text-white px-2 rounded">+</button>
+          </div>
+
+          <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Subtotal: {{ (item.price * item.quantity) | currency }}</p>
         </div>
       </div>
 
