@@ -2,8 +2,9 @@ import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } fr
 import { provideRouter, withHashLocation, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
+import { NgxSpinnerModule } from "ngx-spinner";
 import { loadingInterceptor } from './interceptors/loading.interceptor';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 
 export const appConfig: ApplicationConfig = {
@@ -15,7 +16,7 @@ export const appConfig: ApplicationConfig = {
    provideHttpClient(
       withInterceptors([loadingInterceptor]) 
     ),
-importProvidersFrom(NgxSpinnerModule)
+importProvidersFrom(NgxSpinnerModule, MatSlideToggleModule)
 
 ],
 

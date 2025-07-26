@@ -1,2 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Dark mode container styles */
+.dark-theme {
+  background-color: #303030;
+  color: white;
+}
+
+/* Material card dark mode styles */
+.dark-theme .mat-card {
+  background-color: #424242;
+  color: white;
+}
+
+/* Custom toggle styles */
+.dark-mode-toggle {
+  margin-bottom: 20px;
+}
+
+/* Custom colors for the slide toggle */
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #3f51b5; /* Indigo 500 */
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: rgba(63, 81, 181, 0.54); /* Indigo 500 with opacity */
+}
+
+/* Smooth transitions */
+.container {
+  padding: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.mat-card {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+ body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
